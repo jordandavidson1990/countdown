@@ -1,20 +1,26 @@
 import React, { Component } from 'react'
-import {View, Text, TouchableHighLight} from 'react-native'
+import {View, Text, TouchableHighlight} from 'react-native'
 
 class EventForm extends Component{
+    state={
+        title:null,
+        date:''
+    }
     handleAddPress = () => {
-      
+      this.props.navigation.goBack();
     }
     
-    render(){
-        return(
-                <View>
-                    <TouchableHighLight
-                    onPress={this.handleAddPress}>
-                        <Text>Add</Text>
-                    </TouchableHighLight>
-                </View>
-        )
+    render() {
+        return (
+          <View>
+            <TouchableHighlight
+              onPress={this.handleAddPress}
+            >
+              <Text>Add</Text>
+            </TouchableHighlight>
+          </View>
+        );
+      }
     }
-}
+
 export default EventForm;
